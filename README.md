@@ -13,3 +13,6 @@ Replace the JPEG with a new versioned filename and update og:image, dimensions, 
 
 ## Verification
 Check HTTP 200 and HTML metadata with curl using normal and WhatsApp User-Agents. Check the JPEG returns image/jpeg. Test immediate navigation in desktop/mobile browsers, fallback with JavaScript disabled, and Back without redirect loops. Paste the production URL into WhatsApp on a phone and verify the actual preview and destination. WhatsApp controls preview cropping. Form access may require Google login; do not submit test registrations.
+
+## Contact route
+`/cp_nadhief` returns a temporary HTTP 307 redirect to Nadhief on WhatsApp (+62 821-2665-7276), with the supplied message prefilled. The user must press Send themselves. The route is configured in vercel.json and needs Vercel to test; Python's static server does not implement it.
