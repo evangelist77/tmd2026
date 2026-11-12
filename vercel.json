@@ -6,6 +6,18 @@
   "installCommand": "",
   "redirects": [
     {
+      "source": "/",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfV-G5dIiOWtGfLiEXc2h6JnuvsoAHvLBb0md_haiyWC7QNDQ/viewform?usp=send_form",
+      "permanent": false,
+      "missing": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*([Ww]hats[Aa]pp|facebookexternalhit|Facebot|meta-externalagent|meta-externalfetcher).*"
+        }
+      ]
+    },
+    {
       "source": "/cp_nadhief",
       "destination": "https://api.whatsapp.com/send/?phone=6282126657276&text=Assalamu%E2%80%99alaikum%20warahmatullahi%20wabarakatuh%2C%20Kak%20Nadhief%21%20%F0%9F%8C%99%E2%9C%A8%0A%0ABismillahirrahmanirrahim%20%F0%9F%A4%B2%F0%9F%8F%BB%0A%0AInsyaAllah%2C%20saya%20berniat%20untuk%20mengikuti%20%2A%2ATraining%20Mujtahid%20Dakwah%20%28TMD%29%202026%2A%2A%20%F0%9F%95%8C%F0%9F%93%96%0A%0ABoleh%20minta%20informasi%20terkait%20alur%20dan%20persyaratan%20pendaftarannya%2C%20Kak%3F%20%F0%9F%98%87%0A%0AJazakallahu%20khairan%20katsiran%20atas%20waktu%20dan%20bantuannya.%20Semoga%20Allah%20senantiasa%20memberkahi%20segala%20urusan%20Kakak.%20Aamiin%20%F0%9F%A4%B2%F0%9F%8F%BB%F0%9F%92%9A%0A%0AWassalamu%E2%80%99alaikum%20warahmatullahi%20wabarakatuh.",
       "permanent": false
@@ -14,6 +26,21 @@
       "source": "/cp_syifa",
       "destination": "https://api.whatsapp.com/send/?phone=6281297758329&text=Assalamu%E2%80%99alaikum%20warahmatullahi%20wabarakatuh%2C%20Kak%20Syifa%21%20%F0%9F%8C%99%E2%9C%A8%0A%0ABismillahirrahmanirrahim%20%F0%9F%A4%B2%F0%9F%8F%BB%0A%0AInsyaAllah%2C%20saya%20berniat%20untuk%20mengikuti%20%2A%2ATraining%20Mujtahid%20Dakwah%20%28TMD%29%202026%2A%2A%20%F0%9F%95%8C%F0%9F%93%96%0A%0ABoleh%20minta%20informasi%20terkait%20alur%20dan%20persyaratan%20pendaftarannya%2C%20Kak%3F%20%F0%9F%98%87%0A%0AJazakallahu%20khairan%20katsiran%20atas%20waktu%20dan%20bantuannya.%20Semoga%20Allah%20senantiasa%20memberkahi%20segala%20urusan%20Kakak.%20Aamiin%20%F0%9F%A4%B2%F0%9F%8F%BB%F0%9F%92%9A%0A%0AWassalamu%E2%80%99alaikum%20warahmatullahi%20wabarakatuh.",
       "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Vary",
+          "value": "User-Agent"
+        }
+      ]
     }
   ]
 }
