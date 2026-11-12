@@ -19,3 +19,5 @@ Check HTTP 200 and HTML metadata with curl using normal and WhatsApp User-Agents
 
 ## Poster v2
 Source: source-assets/poster-tmd-2026-v2.png (original supplied PNG, preserved byte-for-byte). Preview: public/assets/poster-tmd-2026-v2.jpg, 1080×1920, 291,756 bytes; JPEG quality 82, optimized progressive, no chroma subsampling, no resizing/cropping. Versioned filename replaces v1 in the Open Graph tags. Existing WhatsApp messages may retain their cached preview; test a fresh share with ?v=2 if necessary.
+
+`/cp_syifa` uses the same contact flow for Kak Syifa (+62 812-9775-8329), with the greeting changed to Kak Syifa and all emoji and line breaks preserved.
