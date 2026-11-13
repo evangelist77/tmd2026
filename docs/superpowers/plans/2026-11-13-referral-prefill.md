@@ -38,10 +38,12 @@
 - Consumes: URL query `ref`, matching `[0-9]{6}` only.
 - Produces: Google Forms URL with `usp=pp_url&entry.1217740900=<ref>`; all other fields absent.
 
-- [ ] **Step 1: Add failing route cases.** Assert `123456` and `000123` map to `entry.1217740900` exactly; absent, empty, `12345`, `1234567`, `ABC123` do not prefill. Assert crawler requests with valid ref return HTML metadata. Keep existing contact and poster checks.
-- [ ] **Step 2: Run tests against current deployment.** `python3 scripts/verify_routes.py`; new valid-ref assertions must fail.
-- [ ] **Step 3: Add Vercel query condition.** Match `ref` with named capture `(?<referral>[0-9]{6})` anchored at both ends; interpolate `:referral` into only `entry.1217740900`. Preserve crawler exclusion. Update fallback using URLSearchParams and the same validation; update anchor before navigation.
-- [ ] **Step 4: Verify.** Validate JSON locally; run updated smoke tests against a Vercel preview. Open valid-ref link in browser and inspect actual referral input value `000123`, with other answer fields blank, without submitting. Run baseline/crawler/contact/poster checks; all assertions must pass.
-- [ ] **Step 5: Commit.** `git add vercel.json public/index.html scripts/verify_routes.py README.md` then `git commit -m "feat: prefill referral code from link"`.
+- [x] **Step 1: Add failing route cases.** Assert `123456` and `000123` map to `entry.1217740900` exactly; absent, empty, `12345`, `1234567`, `ABC123` do not prefill. Assert crawler requests with valid ref return HTML metadata. Keep existing contact and poster checks.
+- [x] **Step 2: Run tests against current deployment.** `python3 scripts/verify_routes.py`; new valid-ref assertions must fail.
+- [x] **Step 3: Add Vercel query condition.** Match `ref` with named capture `(?<referral>[0-9]{6})` anchored at both ends; interpolate `:referral` into only `entry.1217740900`. Preserve crawler exclusion. Update fallback using URLSearchParams and the same validation; update anchor before navigation.
+- [x] **Step 4: Verify.** Validate JSON locally; run updated smoke tests against a Vercel preview. Open valid-ref link in browser and inspect actual referral input value `000123`, with other answer fields blank, without submitting. Run baseline/crawler/contact/poster checks; all assertions must pass.
+- [x] **Step 5: Commit.** `git add vercel.json public/index.html scripts/verify_routes.py README.md` then `git commit -m "feat: prefill referral code from link"`.
 
 Self-review: one task covers routing, fallback, documentation and tests; live field ID verified. Deployment and browser verification remain execution steps.
+
+Execution: completed on `feat/referral-prefill`. See `VERIFICATION.md` for evidence and retained limitations. Used isolated testing deployment rather than changing original production.

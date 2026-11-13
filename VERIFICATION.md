@@ -12,3 +12,12 @@
 
 ## Manual phone check
 Paste https://tmd2026.vercel.app/ into WhatsApp, wait for preview, confirm correct poster and title. Send to your own chat and open the preview to confirm navigation to the form. WhatsApp controls image cropping. Google Form may require Google sign-in.
+
+## Referral prefill — 2026-11-13
+
+- Original deployment: baseline 10/10 checks passed; new valid-ref check failed before implementation (no referral entry).
+- Updated isolated Vercel test deployment: HTTP suite 22/22 passed, including six-digit codes, leading zeroes, extra query parameters, missing/invalid codes, trailing newline rejection, crawler previews, contacts, and poster bytes.
+- `node scripts/verify_fallback.cjs`: 10/10 passed; confirmed the test fails against the original HTML.
+- Browser: test deployment `/?ref=000123` opened the real Google Form; Kode Referral input contained `000123`, other visible text inputs were empty. No form was submitted.
+- Fresh independent code review completed. Existing Vercel query passthrough retained: manually supplied Google `entry.*` parameters can prefill other answers. Duplicate `ref` keys are outside generated-link format and may differ between edge and fallback.
+- Original production was not deployed. Isolated testing project is removed after verification with user authorization.
