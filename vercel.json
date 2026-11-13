@@ -7,6 +7,25 @@
   "redirects": [
     {
       "source": "/",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfV-G5dIiOWtGfLiEXc2h6JnuvsoAHvLBb0md_haiyWC7QNDQ/viewform?usp=pp_url&entry.1217740900=:referral",
+      "permanent": false,
+      "missing": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*([Ww]hats[Aa]pp|facebookexternalhit|Facebot|meta-externalagent|meta-externalfetcher).*"
+        }
+      ],
+      "has": [
+        {
+          "type": "query",
+          "key": "ref",
+          "value": "^(?<referral>[0-9]{6})(?![\\s\\S])"
+        }
+      ]
+    },
+    {
+      "source": "/",
       "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfV-G5dIiOWtGfLiEXc2h6JnuvsoAHvLBb0md_haiyWC7QNDQ/viewform?usp=send_form",
       "permanent": false,
       "missing": [

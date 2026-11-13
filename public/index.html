@@ -19,6 +19,16 @@
 </head>
 <body>
 <main><h1>TMD 2026</h1><p>Mengarahkan ke formulir pendaftaran…</p><p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfV-G5dIiOWtGfLiEXc2h6JnuvsoAHvLBb0md_haiyWC7QNDQ/viewform?usp=send_form">Buka formulir</a></p></main>
-<script>window.location.replace("https://docs.google.com/forms/d/e/1FAIpQLSfV-G5dIiOWtGfLiEXc2h6JnuvsoAHvLBb0md_haiyWC7QNDQ/viewform?usp=send_form");</script>
+<script>
+const link = document.querySelector('main a');
+const destination = new URL(link.href);
+const referral = new URLSearchParams(window.location.search).get('ref');
+if (/^[0-9]{6}$/.test(referral) && referral.length === 6) {
+  destination.searchParams.set('usp', 'pp_url');
+  destination.searchParams.set('entry.1217740900', referral);
+}
+link.href = destination.href;
+window.location.replace(destination.href);
+</script>
 </body>
 </html>

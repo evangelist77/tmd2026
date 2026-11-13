@@ -24,3 +24,8 @@ Source: source-assets/poster-tmd-2026-v2.png (original supplied PNG, preserved b
 
 ## Edge redirect verification
 Run `python3 scripts/verify_routes.py https://tmd2026.vercel.app` after deployment. Python local static serving does not implement Vercel conditional routing. Root responses vary by User-Agent and are not browser-cached. The JavaScript and link fallback remain for requests that receive the metadata page.
+
+## Referral links
+Use `https://tmd2026.vercel.app/?ref=123456` to prefill only **Kode Referral (opsional)**. Codes must contain exactly six ASCII digits; leading zeroes such as `000123` are preserved. Missing or invalid codes open the ordinary blank form. The Google Forms field is `entry.1217740900`; update both routing and HTML if that field is recreated. WhatsApp/Meta previews and contact routes retain their existing behavior.
+
+Run `node scripts/verify_fallback.cjs` for local fallback regression checks (Node.js standard library only). Full HTTP routing checks require a deployed URL: Vercel dev ignores query `has` conditions.
