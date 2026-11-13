@@ -6,6 +6,11 @@
   "installCommand": "",
   "redirects": [
     {
+      "source": "/:referral([A-Za-z0-9]{6})",
+      "destination": "/?ref=:referral",
+      "permanent": false
+    },
+    {
       "source": "/",
       "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfV-G5dIiOWtGfLiEXc2h6JnuvsoAHvLBb0md_haiyWC7QNDQ/viewform?usp=pp_url&entry.1217740900=:referral",
       "permanent": false,
@@ -20,7 +25,7 @@
         {
           "type": "query",
           "key": "ref",
-          "value": "^(?<referral>[0-9]{6})(?![\\s\\S])"
+          "value": "^(?<referral>[A-Za-z0-9]{6})(?![\\s\\S])"
         }
       ]
     },
@@ -50,6 +55,19 @@
   "headers": [
     {
       "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "Vary",
+          "value": "User-Agent"
+        }
+      ]
+    },
+    {
+      "source": "/:referral([A-Za-z0-9]{6})",
       "headers": [
         {
           "key": "Cache-Control",

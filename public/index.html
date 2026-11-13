@@ -23,7 +23,7 @@
 const link = document.querySelector('main a');
 const destination = new URL(link.href);
 const referral = new URLSearchParams(window.location.search).get('ref');
-if (/^[0-9]{6}$/.test(referral) && referral.length === 6) {
+if (/^[A-Za-z0-9]{6}$/.test(referral) && referral.length === 6) {
   destination.searchParams.set('usp', 'pp_url');
   destination.searchParams.set('entry.1217740900', referral);
 }

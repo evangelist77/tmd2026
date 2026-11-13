@@ -8,7 +8,10 @@ const href = html.match(/<a href="([^"]+)"/)[1];
 for (const [query, expected] of [
   ['?ref=123456', '123456'], ['?ref=000123', '000123'],
   ['?v=2&ref=654321', '654321'], ['', null], ['?ref=', null],
-  ['?ref=12345', null], ['?ref=1234567', null], ['?ref=ABC123', null],
+  ['?ref=12345', null], ['?ref=1234567', null], ['?ref=ABC123', 'ABC123'], ['?ref=AX2046', 'AX2046'],
+  ['?v=2&ref=ax2046', 'ax2046'], ['?ref=ABCDEF', 'ABCDEF'],
+  ['?ref=AX204', null], ['?ref=AX20467', null], ['?ref=AX-046', null],
+  ['?ref=%C3%89X2046', null],
   ['?ref=%20123456', null], ['?ref=123456%0A', null],
 ]) {
   const link = { href };

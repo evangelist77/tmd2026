@@ -21,3 +21,11 @@ Paste https://tmd2026.vercel.app/ into WhatsApp, wait for preview, confirm corre
 - Browser: test deployment `/?ref=000123` opened the real Google Form; Kode Referral input contained `000123`, other visible text inputs were empty. No form was submitted.
 - Fresh independent code review completed. Existing Vercel query passthrough retained: manually supplied Google `entry.*` parameters can prefill other answers. Duplicate `ref` keys are outside generated-link format and may differ between edge and fallback.
 - Original production was not deployed. Isolated testing project is removed after verification with user authorization.
+
+## Alphanumeric referrals and short links — 2026-11-13
+
+- Before implementation: new alphanumeric expectations failed against both the old fallback script and production edge; `/AX2046?v=2` returned 404.
+- Fallback now accepts exactly six ASCII letters/digits, preserving case and leading zeroes: 17/17 checks passed.
+- Isolated Vercel preview: 53/53 HTTP checks passed, using authenticated access because preview deployment protection is enabled. Short links redirect to the root query form, preserving `v=2`; path code overrides conflicting `ref` query values.
+- WhatsApp/Meta crawler checks passed for both `/?v=2&ref=AX2046` and `/AX2046?v=2`, serving v2 poster metadata. The poster asset response still matches the local v2 JPEG byte-for-byte; contact links remain intact.
+- Existing query passthrough remains unchanged. Actual WhatsApp app cache/cropping and Google Form submission are not tested.
